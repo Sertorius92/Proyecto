@@ -93,6 +93,7 @@ public class Proyecto_Main extends javax.swing.JFrame {
         bonoProceso = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         bonoDesplazamiento = new javax.swing.JTextField();
+        label1 = new java.awt.Label();
 
         totalTrenzas3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         totalTrenzas3.setText("X");
@@ -418,7 +419,7 @@ public class Proyecto_Main extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -661,18 +662,27 @@ public class Proyecto_Main extends javax.swing.JFrame {
                 .addGap(23, 23, 23))
         );
 
+        label1.setAlignment(java.awt.Label.CENTER);
+        label1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        label1.setText("Proyecto - Erick García & Joshua Martinez");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(6, 6, 6))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -681,18 +691,15 @@ public class Proyecto_Main extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(6, 6, 6)))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addComponent(label1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addComponent(label1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -745,7 +752,7 @@ public class Proyecto_Main extends javax.swing.JFrame {
         labelSecundariaDisponible.setText(Integer.toString(memoria.getMemoriaSecundaria()));
         labelTamañoSecundario.setText(Integer.toString(memoria.getMemoriaSecundariaTotal()));
         crearProceso.setEnabled(true);
-        textArea.append("- Ha comenzado el programa de manejo de memoria virtual\n");
+        textArea.append("- Programa de manejo de memoria virtual inicializado.\n");
         actualizarMemoriaPrincipal();
         actualizarMemoriaSecundaria();
     }//GEN-LAST:event_instalarActionPerformed
@@ -757,7 +764,7 @@ public class Proyecto_Main extends javax.swing.JFrame {
             moverRamdomMemoriaToAlmacenamiento();
             this.procesos[contadorProceso] = new Proceso(contadorProceso, nombreProceso, tamañoProceso, memoria.getTamañoPagina());
             this.memoria.agregarProceso(this.procesos[contadorProceso]);
-            textArea.append("- Se ha creado un proceso de un tamaño "+tamañoProceso+", su id es '"+contadorProceso+"', y el numero de paginas que posee son "+tamañoProceso/memoria.getTamañoPagina()+"\n");
+            textArea.append("- Un proceso de tamaño "+tamañoProceso+", con ID: '"+contadorProceso+"', con "+tamañoProceso/memoria.getTamañoPagina()+" página(s) ha sido creado. \n");
             contadorProceso++;
             labelCantidadProcesos.setText(Integer.toString(contadorProceso));
             fieldNombreProceso.setText("Proceso "+contadorProceso);
@@ -953,7 +960,7 @@ public class Proyecto_Main extends javax.swing.JFrame {
                 for(int i = 0; i < procesos.length; i++) {
                     if(procesos[i].getPaginasMemoriaPrincipal() == 1) {
                         this.memoria.quitarUnaPaginaMemoria(procesos[i]);
-                        textArea.append("> Se ha suspendido el proceso de id "+procesos[i].getIdProceso()+" porque la memoria esta demasiado llena de procesos.\n");
+                        textArea.append("> Se ha suspendido el proceso de ID: "+procesos[i].getIdProceso()+" porque la memoria esta demasiado llena de procesos.\n");
                         procesos[i].setEstado("Suspendido");
                         break;
                     }
@@ -1056,6 +1063,7 @@ public class Proyecto_Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private java.awt.Label label1;
     private javax.swing.JLabel labelCantidadProcesos;
     private javax.swing.JLabel labelMarcosPagina;
     private javax.swing.JLabel labelMemoriaDisponible;

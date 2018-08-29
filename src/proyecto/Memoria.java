@@ -114,7 +114,7 @@ public class Memoria {
         proceso.setPaginasMemoriaPrincipal(proceso.getPaginasMemoriaPrincipal()+1);
         proceso.setPaginasMemoriaSecundaria(proceso.getPaginasMemoriaSecundaria()-1);
         procesoActivoListo(proceso);
-        textArea.append("- Se ha puesto la pagina del proceso de id "+proceso.getIdProceso()+" pasando "+proceso.getPaginasMemoriaSecundaria()+" paginas de memoria secundaria a memoria principal\n");
+        textArea.append("- Se ha puesto la pagina del proceso de ID: "+proceso.getIdProceso()+" pasando "+proceso.getPaginasMemoriaSecundaria()+" paginas de memoria secundaria a memoria principal\n");
         mostrarEspaciosDisponibles();
         mostrarEspaciosDisponiblesAlmacenamiento();
     }
@@ -126,7 +126,7 @@ public class Memoria {
                 agregarProcesoAlmacenamiento(proceso, i);
             }
         }
-        textArea.append("- Se ha suspendido el proceso de id "+proceso.getIdProceso()+" pasando "+proceso.getPaginasMemoriaPrincipal()+" paginas de memoria principal a memoria secundaria\n");
+        textArea.append("- Se ha suspendido el proceso de ID: "+proceso.getIdProceso()+" pasando "+proceso.getPaginasMemoriaPrincipal()+" paginas de memoria principal a memoria secundaria\n");
         proceso.setPaginasMemoriaSecundaria(proceso.getPaginasMemoriaSecundaria()+proceso.getPaginasMemoriaPrincipal());
         proceso.setPaginasMemoriaPrincipal(0);
         mostrarEspaciosDisponibles();
@@ -146,7 +146,7 @@ public class Memoria {
             }
         }
         procesoActivoListo(proceso);
-        textArea.append("- Se ha puesto en listo el proceso de id "+proceso.getIdProceso()+" pasando "+proceso.getPaginasMemoriaSecundaria()+" paginas de memoria secundaria a memoria principal\n");
+        textArea.append("- Se ha puesto en listo el proceso de ID: "+proceso.getIdProceso()+" pasando "+proceso.getPaginasMemoriaSecundaria()+" paginas de memoria secundaria a memoria principal\n");
         mostrarEspaciosDisponibles();
         mostrarEspaciosDisponiblesAlmacenamiento();
     }
@@ -160,7 +160,7 @@ public class Memoria {
             }
         }
         proceso.setEstado("Eliminado");
-        textArea.append("- Se ha eliminado el proceso de id "+proceso.getIdProceso()+" borrando "+proceso.getPaginasMemoriaPrincipal()+" paginas de memoria principal y "+proceso.getPaginasMemoriaSecundaria()+" paginas de memoria secundaria\n");
+        textArea.append("- Se ha eliminado el proceso de ID: "+proceso.getIdProceso()+" borrando "+proceso.getPaginasMemoriaPrincipal()+" paginas de memoria principal y "+proceso.getPaginasMemoriaSecundaria()+" paginas de memoria secundaria\n");
         proceso.setPaginasMemoriaPrincipal(0);
         proceso.setPaginasMemoriaSecundaria(0);
     }
@@ -207,7 +207,7 @@ public class Memoria {
                 break;
             }
         }
-        textArea.append("> No hay espacio en memoria principal. Se ha movido una(s) pagina(s) del proceso de id "+proceso.getIdProceso()+" a memoria secundaria\n");
+        textArea.append("> No hay espacio en memoria principal. Se ha movido una(s) pagina(s) del proceso de ID: "+proceso.getIdProceso()+" a memoria secundaria\n");
         proceso.setPaginasMemoriaSecundaria(proceso.getPaginasMemoriaSecundaria()+1);
         proceso.setPaginasMemoriaPrincipal(proceso.getPaginasMemoriaPrincipal()-1);
         procesoActivoListo(proceso);
